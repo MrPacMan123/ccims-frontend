@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>Node Info:</h2>
+<div *ngIf="data?.component != null" >
+    <mat-card>
+        <h3>Component: {{data.component.name}}</h3>
+        <p>{{data.component.description}}</p>
+    </mat-card>
+    <mat-action-list>
+        <button mat-list-item (click)="editComponent()" > Edit {{data.component.name}} </button>
+        <button mat-list-item (click)="removeComponent()" > Remove {{data.component.name}} </button>
+        <button mat-list-item (click)="newIssue()" > Create New Issue </button>
+    </mat-action-list>
+</div>
+<div *ngIf="data?.interface != null" >
+    <mat-card>
+        <h3>Interface: {{data.interface.interfaceName}}</h3>
+    </mat-card>
+    <mat-action-list>
+        <button mat-list-item > Remove {{data.interface.interfaceName}} </button>
+        <button mat-list-item > Create New Issue </button>
+    </mat-action-list>
+</div>
+<h2 mat-dialog-title>Issues:</h2>
+<mat-action-list>
+    <button mat-list-item (click)="editIssue(issueId)" *ngFor="let issueId of data?.issues" > Issue: {{issues[issueId]?.title}} </button>
+</mat-action-list>

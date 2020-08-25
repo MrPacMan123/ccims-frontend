@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'projects/:id', component: ProjectOverviewComponent},
   {path: 'components', component: ComponentListComponent},
   {path: 'issue', component: IssueDetailComponent},
-  //add github token in environment to make the component list work
+  // add github token in environment to make the component list work
   {path: 'components', component: ComponentListComponent}
 ];
 

@@ -19,6 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ComponentListComponent } from './component-list/component-list.component';
 import { IssueDetailComponent } from './issue-detail/issue-detail.component';
 
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +44,10 @@ import { IssueDetailComponent } from './issue-detail/issue-detail.component';
     MatIconModule,
     MatListModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers
+  }),
   ],
   providers: [],
   bootstrap: [AppComponent]

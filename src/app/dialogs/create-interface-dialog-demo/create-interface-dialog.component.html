@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Create Interface</h2>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="this.getGeneralInformation()">
+        <ng-template matStepLabel>Create a new Interface</ng-template>
+        <div>
+            <mat-form-field appearance="standard" class="max-length">
+                <mat-label>Interface Name</mat-label>
+                <input matInput type="text" title="Interface's name" formControlName="interfaceName" cdkFocusInitial
+                    required>
+            </mat-form-field>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="this.getInterfaceName()"
+        [disabled]="!this.getGeneralInformation()?.valid">Create</button>
+</mat-dialog-actions>
